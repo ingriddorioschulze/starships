@@ -2,3 +2,49 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: #0f193b;
+}
+
+h1 {
+  font-size: 30px;
+  color: white;
+  padding: 20px;
+}
+
+table {
+  padding: 20px;
+}
+
+td {
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+}
+
+.btn {
+  font-size: 15px;
+  margin: 10px;
+}
+
+.more-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.details {
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+}

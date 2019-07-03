@@ -36,51 +36,56 @@ export default class Starships extends React.Component {
     render() {
         const { starships, moreDetails } = this.state;
         if (moreDetails) {
-            console.log(moreDetails);
             return (
-                <div className="moreDetails">
-                    <table>
-                        <tr>
-                            <td>Name: {moreDetails.name}</td>
-                            <td>Length: {moreDetails.length}</td>
-                            <td>Crew: {moreDetails.crew}</td>
-                            <td>Model: {moreDetails.model}</td>
-                            <td>Manufacturer: {moreDetails.manufacturer}</td>
-                            <td>Consumables: {moreDetails.consumables}</td>
-                            <td>Pilots: {moreDetails.pilots}</td>
-                            <td>Passengers: {moreDetails.passengers}</td>
-                            <td>MGLT: {moreDetails.MGLT}</td>
-                        </tr>
-                        <button
-                            className="btn"
-                            onClick={() => this.setState({ moreDetails: null })}
-                        >
-                            back
-                        </button>
-                    </table>
+                <div className="more-details">
+                    <div className="details">Name: {moreDetails.name}</div>
+                    <div className="details">Length: {moreDetails.length}</div>
+                    <div className="details">Crew: {moreDetails.crew}</div>
+                    <div className="details">Model: {moreDetails.model}</div>
+                    <div className="details">
+                        Manufacturer: {moreDetails.manufacturer}
+                    </div>
+                    <div className="details">
+                        Consumables: {moreDetails.consumables}
+                    </div>
+                    <div className="details">Pilots: {moreDetails.pilots}</div>
+                    <div className="details">
+                        Passengers: {moreDetails.passengers}
+                    </div>
+                    <div className="details">MGLT: {moreDetails.MGLT}</div>
+                    <button
+                        className="btn"
+                        onClick={() => this.setState({ moreDetails: null })}
+                    >
+                        back
+                    </button>
                 </div>
             );
         } else {
             return (
                 <React.Fragment>
                     <div className="starships">
-                        {starships.map(starship => (
-                            <table key={starship.id}>
-                                <tr>
-                                    <td>Name: {starship.name}</td>
-                                    <td>Length: {starship.length}</td>
-                                    <td>Crew: {starship.crew}</td>
-                                    <button
-                                        className="btn"
-                                        onClick={() =>
-                                            this.moreDetails(starship)
-                                        }
-                                    >
-                                        more details
-                                    </button>
-                                </tr>
-                            </table>
-                        ))}
+                        <table>
+                            <tbody>
+                                {starships.map(starship => (
+                                    <tr key={starship.url}>
+                                        <td>Name: {starship.name}</td>
+                                        <td>Length: {starship.length}</td>
+                                        <td>Crew: {starship.crew}</td>
+                                        <td>
+                                            <button
+                                                className="btn"
+                                                onClick={() =>
+                                                    this.moreDetails(starship)
+                                                }
+                                            >
+                                                more details
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
                 </React.Fragment>
             );
