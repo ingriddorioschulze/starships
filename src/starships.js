@@ -51,6 +51,12 @@ export default class Starships extends React.Component {
                             <td>Passengers: {moreDetails.passengers}</td>
                             <td>MGLT: {moreDetails.MGLT}</td>
                         </tr>
+                        <button
+                            className="btn"
+                            onClick={() => this.setState({ moreDetails: null })}
+                        >
+                            back
+                        </button>
                     </table>
                 </div>
             );
